@@ -1,0 +1,20 @@
+<h2>prime tree grid</h2>
+<p-treeTable [value]="datas">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Type</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
+    <tr>
+      <td>
+        <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+        {{rowData.order_no}}
+      </td>
+      <td>{{rowData.name}}</td>
+      <td>{{rowData.quotation_price}}</td>
+    </tr>
+  </ng-template>
+</p-treeTable>

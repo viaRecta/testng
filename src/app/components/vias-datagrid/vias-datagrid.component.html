@@ -1,0 +1,28 @@
+<table class="table" >
+    <caption *ngIf="caption">{{caption}}</caption>
+    <thead>
+        <tr>
+            <th *ngFor="let col of cols"
+                cellStyle [cellWidth]="col.width"
+                cellStyle [cellPercentWidth]="col.widthPercent">
+              {{col.headerText}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-template let-data ngFor [ngForOf]="datas">
+            <tr>
+                <td *ngFor="let col of cols" 
+                    cellStyle [cellAlign]="col.align" >
+                  {{data[col.dataField] | formatCell:col.dataType:data[col.currencyField]}}
+                </td>
+            </tr>
+            <tr *ngFor="let row of data.children">
+                <td *ngFor="let col of cols" 
+                    cellStyle [cellAlign]="col.align">
+                  {{row[col.dataField] | formatCell:col.dataType:row[col.currencyField]}}
+                </td>
+            </tr>
+        </ng-template>
+    </tbody>
+</table>

@@ -1,0 +1,20 @@
+<p><b>{{globals.userName}}</b></p>
+<table matSort (matSortChange)="sortData($event)">
+  <tr>
+    <th mat-sort-header="code">Kod</th>
+    <th mat-sort-header="name">Malzeme Adı</th>
+    <th>Stok Miktarı</th>
+    <th mat-sort-header="main_group_name">Ana Grubu</th>
+  </tr>
+
+  <tr *ngFor="let material of materials">
+    <td>{{material.code}}</td>
+    <td>{{material.name}}</td>
+    <td>{{material.stock_amount}}</td>
+    <td>{{material.main_group_name}}</td>
+  </tr>
+</table>
+<!-- <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator> -->

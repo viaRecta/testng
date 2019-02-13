@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+//import {MediaMatcher} from '@angular/cdk/layout';
+import { Component, ChangeDetectorRef } from '@angular/core';
+// Globals
+import { Globals } from 'src/app/app.globals';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'testng';
+  constructor(public globals: Globals){
+  }
+
 }
